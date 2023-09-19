@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React</title>
+  </head>
+  <style>
+    #root{
+        background-color:red;
+        color:white;
+    }
+  </style>
+  <body>
+    <div id="root"></div>
+
+    <!-- CDN React content delivery network -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+
+    <!-- js -->
+    <script>
+        //JavaScript==============>>
+
+        //React=============>>
+        // const rootElement = document.querySelector('#root');
+        // const heading = React.createElement('h1',{},'hello world');
+        // const root = ReactDOM.createRoot(rootElement);
+        // root.render(heading)
+        // console.log(root);
+
+
+        //============>>
+        const heading1 = React.createElement('h1',{},'hello world');
+        const heading2 = React.createElement('h2',{},'Salom Dunyo');
+        const container = React.createElement('div',{
+            id:'container'
+        },heading1,heading2);
+
+        const root = ReactDOM.createRoot(document.querySelector('#root'));
+        root.render(container)
+    </script>
+  </body>
+</html>
