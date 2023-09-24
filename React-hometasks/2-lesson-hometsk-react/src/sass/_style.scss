@@ -1,0 +1,250 @@
+@import "./buttons";
+@import "./mixin";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+#container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+main {
+  padding: 64px 0 116px 0;
+  // background-image: url('../images/Rectangle 256.png');
+  background-color: green;
+  #container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+
+    a {
+      border-radius: 59px;
+      background: rgba(0, 0, 0, 0.5);
+      font-size: 18px;
+      padding: 18px 48px;
+      font-weight: 500;
+      margin: 50px 0 17px 0;
+      color: white;
+    }
+
+    h1 {
+      text-shadow: 0px 0px 40px rgba(0, 0, 0, 0.5);
+      font-size: 144px;
+      text-align: center;
+      font-weight: 900;
+      line-height: 134.5px;
+      margin-bottom: 100px;
+    }
+    button {
+      @include mainBtn();
+    }
+  }
+}
+
+#service {
+  padding: 70px 0 50px 0;
+  #container {
+    @include df-column();
+    align-items: center;
+    gap: 50px;
+    h2 {
+      color: #828282;
+      font-size: 64px;
+      font-weight: 800;
+      &:last-child {
+        padding-top: 20px;
+      }
+    }
+    .ServiceCards {
+      @include df-c();
+      gap: 22px;
+    }
+    .cardBox {
+      width: 385px;
+      border-radius: 30px;
+      background: #fff;
+      transition: 0.3s ease-in-out;
+      box-shadow: 0px 10px 30px 0px rgba(16, 51, 30, 0.1);
+      img {
+        width: 100%;
+      }
+      .cardTexts {
+        padding: 30px;
+        @include df-column();
+        gap: 10px;
+      }
+      &:hover {
+        transform: translateY(-30px);
+      }
+    }
+    button {
+      @include mainBtn();
+    }
+  }
+}
+
+#aboutUS {
+  background-color: green;
+  padding: 154px 0 50px 0;
+  #container {
+    @include df-column();
+    align-items: center;
+    gap: 50px;
+  }
+  .textsCard {
+    @include df-c();
+    gap: 60px;
+    p {
+      color: white;
+      width: 360px;
+      text-align: center;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 24px;
+    }
+  }
+  button {
+    @include mainBtn();
+  }
+}
+
+#testimonial {
+  padding: 70px 0 50px 0;
+  #container {
+    @include df-column();
+    align-items: center;
+    gap: 70px;
+    h2 {
+      color: #828282;
+      font-size: 64px;
+      font-weight: 800;
+    }
+  }
+  .tesCards {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 45px;
+  }
+  .tesCardBox {
+    @include df-c();
+    align-items: start;
+    gap: 15px;
+    padding: 30px;
+    border-radius: 40px;
+    border: 1px solid #6cb981;
+    width: 577px;
+    .rightTexts {
+      @include df-column();
+      gap: 5px;
+      h4 {
+        color: #6cb981;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 22px;
+      }
+      p {
+        color: #0d4c14;
+        line-height: 22px;
+      }
+    }
+  }
+}
+
+#contact {
+  padding: 50px 0 50px 0;
+  background-color: #fcfcfc;
+  #container {
+    @include df-column();
+    align-items: center;
+    h2 {
+      color: #828282;
+      font-size: 64px;
+      font-weight: 800;
+    }
+  }
+
+  .bottomContents {
+    @include df-c();
+    gap: 100px;
+    .leftForm {
+      @include df-column();
+      align-items: center;
+      gap: 15px;
+      .inputs {
+        @include df-column();
+        gap: 5px;
+      }
+      label {
+        font-size: 18px;
+        font-weight: 600;
+      }
+      input {
+        border-radius: 61px;
+        background: #9fdea9;
+        color: white;
+        width: 371px;
+        border: none;
+        outline: none;
+        padding: 20px;
+        font-size: 16px;
+      }
+      button {
+        border: none;
+        outline: none;
+        background-color: #fff;
+        border-radius: 61px;
+        border: 3px solid #4db96b;
+        padding: 15px 50px;
+        font-size: 16px;
+        @include btn();
+        cursor: pointer;
+      }
+    }
+    .rightSide {
+      padding-bottom: 45px;
+      @include df-column();
+      gap: 40px;
+      .emailContact,
+      .phone,
+      .location {
+        @include df-c();
+        gap: 20px;
+        i {
+          font-size: 24px;
+          color: #4db96b;
+        }
+        a {
+          font-size: 16px;
+          font-weight: 600;
+          color: black;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  height: 145px;
+  background-color: #324b29;
+  #container {
+    @include df-c();
+  }
+  h2 {
+    padding-top: 20px;
+    color: #fff;
+    font-size: 64px;
+    font-weight: 800;
+  }
+}

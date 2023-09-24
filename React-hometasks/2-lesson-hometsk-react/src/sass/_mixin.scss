@@ -1,0 +1,25 @@
+@mixin df-sb() {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin df-c() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@mixin df-column() {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+@mixin btn() {
+  transition: 0.3s ease-in-out;
+  &:hover {
+    opacity: 0.8;
+  }
+  &:active {
+    transform: scale(0.95);
+  }
+}
