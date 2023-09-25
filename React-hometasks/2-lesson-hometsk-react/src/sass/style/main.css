@@ -20,7 +20,10 @@ li {
 
 main {
   padding: 64px 0 116px 0;
-  background-color: green;
+  background-image: url("../../images/Rectangle 256.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 main #container {
   display: flex;
@@ -137,7 +140,10 @@ main #container button:active {
 }
 
 #aboutUS {
-  background-color: green;
+  background-image: url("../../images/aboutUsBcImg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   padding: 154px 0 50px 0;
 }
 #aboutUS #container {
