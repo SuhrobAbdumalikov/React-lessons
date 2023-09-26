@@ -1,0 +1,58 @@
+h1.DefaultHeadingStyle {
+  color: green;
+}
+h1.HeadingRed {
+  color: red;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  background-color: #ccc;
+  width: 300px;
+  padding: 10px 20px;
+}
+.title {
+  color: red;
+  font-weight: 700;
+  font-size: 24px;
+}
+.options {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  font-size: 18px;
+  justify-content: center;
+  margin-left: 10px;
+}
+.check {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.check i {
+  color: grey;
+}
+.mainTitle {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding-bottom: 5px;
+}
+.cardBox {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.box {
+  background-color: #fff;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
