@@ -1,0 +1,10 @@
+.Box{
+    width: 200px;
+    height: 200px;
+    background-color: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius:10px;
+}
