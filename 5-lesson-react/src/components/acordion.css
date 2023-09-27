@@ -1,0 +1,27 @@
+.show{
+    background-color: green;
+    color:white;
+    padding:30px;
+    border-radius:20px;
+    margin-top:20px;
+    transition: all .3s ease-in-out;
+    height: 220px;
+    overflow:hidden;
+}
+
+.hide{
+    padding: 0;
+    height: 0;
+    overflow: hidden;
+    transition: all .3s ease-in-out;
+}
+
+.btn{
+    margin-top:20px;
+    border:none;
+    background-color: #749661;
+    padding:10px 15px;
+    color:white;
+    cursor: pointer;
+    width: 300px;
+}
