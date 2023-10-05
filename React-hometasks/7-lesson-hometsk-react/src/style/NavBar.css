@@ -1,7 +1,7 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .NavBar {
@@ -11,31 +11,31 @@
   background-color: #fff;
   padding: 40px 0;
 }
-.navContainer{
-    width: 1440px;
-    margin: 0 auto;
+.navContainer {
+  width: 1440px;
+  margin: 0 auto;
 }
 .NavBar h2 {
-  color:  #3563e9;
+  color: #3563e9;
   font-family: Plus Jakarta Sans;
   font-size: 32px;
   font-weight: 700;
   line-height: 150%; /* 48px */
   letter-spacing: -0.96px;
 }
-.NavBar .leftSide{
-    display: flex;
-    align-items: center;
-    gap:64px;
-    position: relative;
+.NavBar .leftSide {
+  display: flex;
+  align-items: center;
+  gap: 64px;
+  position: relative;
 }
-.NavBar .rightSide{
-    display: flex;
-    align-items: center;
-    gap:20px;
+.NavBar .rightSide {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
-.rightSide img{
-    cursor: pointer;
+.rightSide img {
+  cursor: pointer;
 }
 
 .inputNavBar {
@@ -67,4 +67,105 @@
   position: absolute;
   right: 20px;
   z-index: 10;
+}
+
+/* ==============>> media <<=============== */
+
+@media (max-width: 1455px) {
+  .navContainer {
+    width: 1250px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 1256px) {
+  .navContainer {
+    width: 1050px;
+    margin: 0 auto;
+  }
+  .inputNavBar input {
+    width: 320px;
+  }
+}
+
+@media (max-width: 1055px) {
+  .navContainer {
+    width: 980px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 990px) {
+  .navContainer {
+    width: 800px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 810px) {
+  .navContainer {
+    width: 700px;
+    margin: 0 auto;
+  }
+  .NavBar .rightSide img:nth-child(2) {
+    display: none;
+  }
+  .NavBar .rightSide img:nth-child(3) {
+    display: none;
+  }
+  .NavBar .leftSide {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 705px) {
+  .navContainer {
+    width: 550px;
+  }
+  .NavBar .leftSide {
+    flex-direction: column;
+    align-items: start;
+  }
+  .NavBar {
+    align-items: start;
+  }
+}
+
+@media (max-width: 560px) {
+  .navContainer {
+    width: 400px;
+    position: relative;
+  }
+  .NavBar .rightSide {
+    position: absolute;
+    right: 0;
+  }
+  .NavBar .rightSide img:first-child {
+  }
+
+  .inputNavBar .filterIcon {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 10px;
+    right: -80px;
+  }
+  .inputNavBar input {
+    border-radius: 10px !important;
+  }
+}
+
+@media (max-width: 425px) {
+  .navContainer {
+    width: 340px;
+  }
+  .NavBar .leftSide h2 {
+    font-size: 24px;
+  }
+  .NavBar .leftSide .inputNavBar input {
+    width: 260px;
+  }
+  .NavBar .rightSide img {
+    width: 28px;
+    height: 28px;
+  }
 }

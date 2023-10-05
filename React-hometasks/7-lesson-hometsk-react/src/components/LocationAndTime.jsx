@@ -12,7 +12,7 @@ const LocationAndTime = ({ checkedTitle }) => {
           <h3>Location</h3>
           <select>
             <option selected disabled>
-              Select your city
+              Select city
             </option>
           </select>
         </div>
@@ -20,7 +20,7 @@ const LocationAndTime = ({ checkedTitle }) => {
           <h3>Date</h3>
           <select>
             <option selected disabled>
-              Select your date
+              Select date
             </option>
           </select>
         </div>
@@ -28,7 +28,7 @@ const LocationAndTime = ({ checkedTitle }) => {
           <h3>Time</h3>
           <select>
             <option selected disabled>
-              Select your time
+              Select time
             </option>
           </select>
         </div>

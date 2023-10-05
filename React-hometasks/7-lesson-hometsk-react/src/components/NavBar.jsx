@@ -13,6 +13,7 @@ const NavBar = ({ handleSearch, Data, takeLike }) => {
   const toggleModal = () => {
     SetIsOpen((prev) => !prev);
   };
+
   return (
     <div className="NavBar navContainer">
       <div className="leftSide">

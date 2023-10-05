@@ -18,7 +18,7 @@ export const CarsData = [
     id: 1,
     name: "Koenigsegg",
     description: "Sport",
-    popularCar:true,
+    popularCar: true,
     isliked: false,
     img: ad1Img,
     Spesification: [
@@ -44,7 +44,7 @@ export const CarsData = [
     id: 2,
     name: "Nissan GT - R",
     description: "Sport",
-    popularCar:true,
+    popularCar: true,
     isliked: false,
     img: ad2Img,
     Spesification: [
@@ -70,7 +70,7 @@ export const CarsData = [
     id: 3,
     name: "Rolls - Royce",
     description: "Sedan",
-    popularCar:true,
+    popularCar: true,
     isliked: false,
     img: royce,
     Spesification: [
@@ -96,7 +96,7 @@ export const CarsData = [
     id: 4,
     name: "Nissan GT - R",
     description: "Sport",
-    popularCar:true,
+    popularCar: true,
     isliked: false,
     img: ad2Img,
     Spesification: [
@@ -122,7 +122,7 @@ export const CarsData = [
     id: 5,
     isliked: false,
     name: "All New Rush",
-    popularCar:false,
+    popularCar: false,
     description: "SUV",
     img: rush,
     Spesification: [
@@ -147,7 +147,7 @@ export const CarsData = [
   {
     id: 6,
     isliked: false,
-    popularCar:false,
+    popularCar: false,
     name: "CR  - V",
     description: "SUV",
     img: crv,
@@ -173,7 +173,7 @@ export const CarsData = [
   {
     id: 7,
     name: "All New Terios",
-    popularCar:false,
+    popularCar: false,
     description: "SUV",
     isliked: false,
     img: terios,
@@ -199,7 +199,7 @@ export const CarsData = [
   {
     id: 8,
     name: "CR  - V",
-    popularCar:false,
+    popularCar: false,
     description: "SUV",
     isliked: false,
     img: crv2,
@@ -225,7 +225,7 @@ export const CarsData = [
   {
     id: 9,
     name: "MG ZX Exclusice",
-    popularCar:false,
+    popularCar: false,
     description: "Hatchback",
     isliked: false,
     img: mgzx,
@@ -251,7 +251,7 @@ export const CarsData = [
   {
     id: 10,
     name: "New MG ZS",
-    popularCar:false,
+    popularCar: false,
     description: "SUV",
     isliked: false,
     img: mgzs,
@@ -277,7 +277,7 @@ export const CarsData = [
   {
     id: 11,
     name: "MG ZX Excite",
-    popularCar:false,
+    popularCar: false,
     description: "Hatchback",
     isliked: false,
     img: excite,
@@ -303,7 +303,7 @@ export const CarsData = [
   {
     id: 12,
     name: "New MG ZS",
-    popularCar:false,
+    popularCar: false,
     description: "SUV",
     isliked: false,
     img: mgzs2,

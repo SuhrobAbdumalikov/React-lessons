@@ -19,7 +19,7 @@
   width: 272px;
   font-style: normal;
   font-weight: 600;
-  line-height: 150%; /* 48px */
+  line-height: 150%;
   letter-spacing: -0.96px;
 }
 .adsPlatform p {
@@ -43,10 +43,71 @@
 .adsPlatform:hover img {
   transform: translateX(20px);
 }
-.adsBtn{
-  all:unset;
+.adsBtn {
+  all: unset;
 }
 
 /* //=================>> */
-@media (max-width: 300px) {
+@media (max-width: 1455px) {
+  .adsPlatform {
+    width: 550px;
+  }
+  .adsPlatform img {
+    width: 380px;
+    margin-left: 100px;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 1256px) {
+  .adsPlatform img {
+    width: 320px;
+    margin-left: 80px;
+  }
+}
+
+@media (max-width: 990px) {
+  .adsPlatform h2 {
+    font-size: 28px;
+  }
+  .adsPlatform p {
+    font-size: 14px;
+  }
+  .adsPlatform img {
+    width: 260px;
+    margin-left: 50px;
+  }
+  .adsPlatform {
+    width: 400px;
+    height: 350px;
+  }
+}
+
+@media (max-width: 810px) {
+  .adsPlatform {
+    width: 500px;
+  }
+}
+
+@media (max-width: 560px) {
+  .adsPlatform {
+    width: 400px;
+  }
+}
+
+@media (max-width: 425px) {
+  .adsPlatform {
+    width: 340px;
+    height: 232px;
+  }
+  .adsPlatform h2 {
+    font-size: 16px;
+  }
+  .adsPlatform p {
+    font-size: 12px;
+    width: 216px;
+  }
+  .adsPlatform img {
+    width: 192px;
+  }
 }

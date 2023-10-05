@@ -5,9 +5,13 @@
   position: fixed;
   height: 100vh;
 }
+.modalAndClose {
+  position: relative;
+  margin-top: 600px;
+}
 
 .modal {
-  position: fixed;
+  position: relative;
   top: 15%;
   left: 10%;
   transform: translateX(-50%, -50%);
@@ -18,10 +22,9 @@
   border-radius: 10px;
   z-index: 100;
   display: flex;
-  gap: 50px;
+  gap: 40px;
   overflow-x: scroll;
   align-items: center;
-  padding: 50px;
 }
 .modal::-webkit-scrollbar {
   display: none;
@@ -32,25 +35,30 @@
   border-radius: 10px;
   width: 310px;
 }
+.modal .boxCar .bottomSide .bottomTop {
+  gap: 8px;
+}
 .modal h1 {
   color: green;
   font-size: 45px;
 }
 .close {
-  position: fixed;
+  position: absolute;
   font-size: 27px;
   font-weight: 400;
   background-color: #fff;
-  color: white;
-  width: 50px;
+  color: #3563e9;
+  width: 40px;
+  font-weight: 900;
+  font-size: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid red;
+  border: 2px solid #3563e9;
   border-radius: 50%;
-  height: 50px;
-  top: 90px;
-  right: 152px;
+  height: 40px;
+  top: -20px;
+  right: -140px;
   cursor: pointer;
   z-index: 110;
 }
@@ -77,4 +85,108 @@
 }
 .hide {
   display: none;
+}
+
+/* ==========>> media <<============== */
+
+@media (max-width: 1455px) {
+  .modal {
+    left: 2%;
+  }
+  .close {
+    right: -40px;
+  }
+}
+
+@media (max-width: 1256px) {
+  .modal {
+    width: 1000px;
+    left: 2%;
+  }
+  .close {
+    right: -40px;
+  }
+}
+
+@media (max-width: 1055px) {
+  .modal {
+    width: 900px;
+  }
+}
+
+@media (max-width: 990px) {
+  .modal {
+    width: 780px;
+    left: 0px;
+  }
+  .close {
+    right: -20px;
+  }
+}
+
+@media (max-width: 810px) {
+  .modal {
+    width: 500px;
+    overflow-x: static;
+    overflow-y: scroll;
+    flex-direction: column;
+    padding: 20px 0;
+    left: 20%;
+  }
+  .close {
+    right: -118px;
+  }
+}
+
+@media (max-width: 705px) {
+  .modalContainer {
+    position: fixed;
+    z-index: 200;
+  }
+  .modal {
+    position: relative;
+    left: 5%;
+    top: -320px;
+  }
+  .close {
+    position: absolute;
+    z-index: 200;
+    top: -340px;
+    right: -45px;
+  }
+}
+
+@media (max-width: 560px) {
+  .modal {
+    left: -2px;
+    width: 400px;
+  }
+  .close {
+    right: -20px;
+  }
+}
+
+@media (max-width: 448px) {
+  .modal {
+    width: 370px;
+  }
+}
+
+@media (max-width: 425px) {
+  .modal {
+    left: -20px;
+  }
+  .close {
+    right: 0px;
+  }
+}
+
+@media (max-width: 405px) {
+  .modal {
+    width: 330px;
+    left: 0px;
+  }
+  .close {
+    right: -10px;
+  }
 }

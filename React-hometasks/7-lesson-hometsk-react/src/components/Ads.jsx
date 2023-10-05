@@ -1,4 +1,3 @@
-import Button from "./ui/Button";
 import "../style/Ads.css";
 import "../style/Button.css";
 
