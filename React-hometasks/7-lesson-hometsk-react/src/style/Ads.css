@@ -1,9 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .adsPlatform {
   display: flex;
   flex-direction: column;
   padding: 24px;
   width: 640px;
   border-radius: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  height: 390px;
 }
 .adsPlatform h2 {
   font-family: Plus Jakarta Sans;
@@ -34,16 +41,12 @@
   width: 200px;
 }
 .adsPlatform:hover img {
-  transform: skewX(-10deg);
-  animation: animate 2s linear;
+  transform: translateX(20px);
+}
+.adsBtn{
+  all:unset;
 }
 
-@keyframes animate {
-  from {
-    transform: skew(-30px);
-  }
-
-  to {
-    transform: translateX(10%);
-  }
+/* //=================>> */
+@media (max-width: 300px) {
 }

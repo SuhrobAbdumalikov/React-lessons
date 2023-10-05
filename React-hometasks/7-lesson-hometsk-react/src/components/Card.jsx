@@ -1,7 +1,8 @@
 import Button from "./ui/Button";
+import "../style/App.css";
 
-export const Card = ({ props, takeLike, isliked }) => {
-  let {
+export const Card = ({
+  props: {
     name,
     description,
     img,
@@ -11,7 +12,10 @@ export const Card = ({ props, takeLike, isliked }) => {
     button,
     lastPrice,
     id,
-  } = props;
+  },
+  takeLike,
+  isliked,
+}) => {
   return (
     <div className="boxCar">
       <div className="topSide">
@@ -81,7 +85,12 @@ export const Card = ({ props, takeLike, isliked }) => {
             <p>{lastPrice}</p>
           </div>
           <div className="rightContent">
-            <Button bcColor={"#3563E9"} color={"white"} children={button} />
+            <Button
+              bcColor={"#3563E9"}
+              color={"white"}
+              children={button}
+              className="cardBtn"
+            />
           </div>
         </div>
       </div>
@@ -89,8 +98,8 @@ export const Card = ({ props, takeLike, isliked }) => {
   );
 };
 
-export const RecomendationCard = ({ props, takeLike, isliked }) => {
-  let {
+export const RecomendationCard = ({
+  props: {
     name,
     description,
     img,
@@ -100,7 +109,10 @@ export const RecomendationCard = ({ props, takeLike, isliked }) => {
     button,
     lastPrice,
     id,
-  } = props;
+  },
+  takeLike,
+  isliked,
+}) => {
   return (
     <div className="boxCar">
       <div className="topSide">

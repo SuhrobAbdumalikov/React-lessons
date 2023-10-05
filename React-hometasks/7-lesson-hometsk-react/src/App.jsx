@@ -47,7 +47,7 @@ const App = () => {
               description={
                 "Ease of doing a car rental safely and reliably. Of course at a low price."
               }
-              button={<Button bcColor={"#3563E9"}>{"Rental Car"}</Button>}
+              button={ <Button bcColor={"#3563E9"}>Rental Car</Button>}
               carImg={Ads1Img}
             />
             <Ads
@@ -57,7 +57,7 @@ const App = () => {
                 "Providing cheap car rental services and safe and comfortable facilities."
               }
               carImg={Ads2Img}
-              button={"Rental Car"}
+              button={ <Button bcColor={"#54A6FF"}>Rental Car</Button>}
               className="ads2"
             />
           </div>
