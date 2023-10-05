@@ -1,0 +1,25 @@
+.mainBtn {
+  color: white;
+  padding: 10px 20px;
+  font-family: Plus Jakarta Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%; /* 24px */
+  letter-spacing: -0.32px;
+  border:none;
+  outline:none;
+  border-radius:4px;
+  max-width: 157px;
+  cursor: pointer;
+  transition: .2s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mainBtn:hover{
+  opacity: 0.8;
+}
+.mainBtn:active{
+  transform:scale(0.97);
+}

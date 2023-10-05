@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.NavBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 40px 0;
+}
+.navContainer{
+    width: 1440px;
+    margin: 0 auto;
+}
+.NavBar h2 {
+  color:  #3563e9;
+  font-family: Plus Jakarta Sans;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 150%; /* 48px */
+  letter-spacing: -0.96px;
+}
+.NavBar .leftSide{
+    display: flex;
+    align-items: center;
+    gap:64px;
+    position: relative;
+}
+.NavBar .rightSide{
+    display: flex;
+    align-items: center;
+    gap:20px;
+}
+.rightSide img{
+    cursor: pointer;
+}
+
+.inputNavBar {
+  display: flex;
+  align-items: center;
+}
+.inputNavBar input {
+  width: 492px;
+  border-radius: 70px;
+  border: 1px solid rgba(195, 212, 233, 0.4);
+  background: var(--primary-0, #fff);
+  padding: 12px 64px;
+  font-family: "Plus Jakarta Sans";
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 150%; /* 21px */
+  letter-spacing: -0.28px;
+}
+.inputNavBar input:focus {
+  border: 1px solid rgba(195, 212, 233, 0.4);
+  outline: none;
+}
+.inputNavBar .searchIcon {
+  position: absolute;
+  z-index: 10;
+  margin-left: 20px;
+}
+.inputNavBar .filterIcon {
+  position: absolute;
+  right: 20px;
+  z-index: 10;
+}
