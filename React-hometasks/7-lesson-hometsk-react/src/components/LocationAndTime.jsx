@@ -2,7 +2,7 @@ import "../style/LocationAndTime.css";
 
 const LocationAndTime = ({ checkedTitle }) => {
   return (
-    <div className="locationAndTime">
+    <div className="locationAndTime" data-aos="zoom-out">
       <div className="rangeDiv">
         <input type="radio"></input>
         <p>{checkedTitle}</p>

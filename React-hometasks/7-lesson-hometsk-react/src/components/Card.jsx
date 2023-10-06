@@ -17,7 +17,7 @@ export const Card = ({
   isliked,
 }) => {
   return (
-    <div className="boxCar">
+    <div className="boxCar" data-aos="zoom-in">
       <div className="topSide">
         <div className="leftTexts">
           <h3>{name}</h3>
@@ -114,7 +114,7 @@ export const RecomendationCard = ({
   isliked,
 }) => {
   return (
-    <div className="boxCar">
+    <div className="boxCar" data-aos="zoom-out">
       <div className="topSide">
         <div className="leftTexts">
           <h3>{name}</h3>

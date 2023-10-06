@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { RecomendationCars, PopularCars } from "./components/Catalog";
 import { CarsData } from "./__mock__/catalogData";
+import Aos from "aos";
 
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
@@ -11,13 +12,17 @@ import LocationAndTime from "./components/LocationAndTime";
 import Ads1Img from "./images/PNG/ads1_img.png";
 import Ads2Img from "./images/PNG/ads2_img.png";
 import swapImg from "./images/SVG/Swap.svg";
-
+import 'aos/dist/aos.css'
 import "./style/App.css";
 
 const App = () => {
   const [like, setLike] = useState(false);
   const [Data, setData] = useState(CarsData);
   const [search, setSearch] = useState("");
+
+  Aos.init({
+    duration:1400,
+  })
 
   const handleSearch = (value) => {
     console.log(value);
@@ -99,7 +104,7 @@ const App = () => {
             }
             takeLike={takeLike}
           ></RecomendationCars>
-          <div className="moreCars">
+          <div className="moreCars" data-aos="zoom-in-up">
             <Button
               bcColor={"#3563E9"}
               color={"white"}

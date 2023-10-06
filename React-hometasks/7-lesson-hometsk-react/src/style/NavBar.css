@@ -14,6 +14,7 @@
 .navContainer {
   width: 1440px;
   margin: 0 auto;
+  overflow: hidden;
 }
 .NavBar h2 {
   color: #3563e9;

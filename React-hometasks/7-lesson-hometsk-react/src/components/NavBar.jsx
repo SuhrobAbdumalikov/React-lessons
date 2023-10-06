@@ -17,10 +17,10 @@ const NavBar = ({ handleSearch, Data, takeLike }) => {
   return (
     <div className="NavBar navContainer">
       <div className="leftSide">
-        <h2>MORENT</h2>
-        <Input onChange={(e) => handleSearch(e.target.value)} />
+        <h2 data-aos="fade-right">MORENT</h2>
+        <Input onChange={(e) => handleSearch(e.target.value)}/>
       </div>
-      <div className="rightSide">
+      <div className="rightSide" data-aos="fade-left">
         <img src={likeImg} onClick={toggleModal} alt="like" id="likeModal" />
         <img src={Notification} alt="notification" />
         <img src={Settings} alt="settings" />

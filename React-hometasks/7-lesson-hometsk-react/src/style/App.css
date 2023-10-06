@@ -6,6 +6,7 @@ main {
 .contentContainer {
   width: 1370px;
   margin: 0 auto;
+  overflow: hidden;
 }
 .allAds {
   display: flex;
