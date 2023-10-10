@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 const DebtCard = ({ userName, date, description, amount }) => {
   return (
-    <div className="card -mb-2">
+    <div className="card mb-2">
       <div className="card-header">{userName}</div>
       <div className="card-body">
         <h5 className="card-title">{description}</h5>

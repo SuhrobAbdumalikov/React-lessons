@@ -45,7 +45,7 @@ function App() {
   console.log(debts);
 
   return (
-    <div className="container mt-3">
+    <div className="container mt-5">
       <button
         type="button"
         className="btn btn-primary mt-2 mb-3"
