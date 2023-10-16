@@ -1,0 +1,29 @@
+.container {
+  width: 1400px;
+  margin: 0 auto;
+}
+.usersList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.userBox {
+  border: 1px solid red;
+  padding: 5px 20px;
+  width: 600px;
+  border-radius: 20px;
+}
+.rightBtns {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 10px;
+}
+.btn {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 8px 20px;
+  border-radius: 5px;
+  color: white;
+}
