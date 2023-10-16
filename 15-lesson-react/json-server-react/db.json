@@ -1,0 +1,43 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": [
+    {
+      "name": "Assalmu Alaykum",
+      "description": "Suhrob",
+      "id": 1
+    },
+    {
+      "name": "Suhrob",
+      "description": "Assalmu Alaykum",
+      "id": 2
+    },
+    {
+      "name": "suhrob",
+      "description": "dev",
+      "id": 3
+    },
+    {
+      "name": "suhorb",
+      "description": "dev",
+      "id": 4
+    },
+    {
+      "name": "hello",
+      "description": "dev",
+      "id": 5
+    }
+  ]
+}
