@@ -40,7 +40,7 @@ function App() {
               // onDragLeave={(e: DragEvent<HTMLDivElement>) => dragLeave(e, card)}
               // onDragEnd={(e: DragEvent<HTMLDivElement>) => dragEnd(e, card)}
               // onDragOver={(e: DragEvent<HTMLDivElement>) => dragOver(e, card)}
-              // onDrop={(e: DragEvent<HTMLDivElement>) => ondropHandler(e, card)}
+              // onDrop={(e: DragEvent<HTMLDivElement>) => ondropHandler(e, card)}e
               draggable
             >
               <h2 className="font-extrabold text-green-500">{name}</h2>

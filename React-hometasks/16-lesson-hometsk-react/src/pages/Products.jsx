@@ -1,7 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import { cardData } from "../__mock__/Data";
 import Button from "../components/ui/Button";
 
 function Products() {
+  const navigate = useNavigate();
   return (
     <>
       <h2 className="text-4xl text-center py-7 font-workSans bg-gray-400 font-extrabold text-purple-700">
@@ -11,8 +13,9 @@ function Products() {
         {cardData.map(({ id, title, mainImg, decription }) => {
           return (
             <div
+              onClick={() => navigate(`/Products/${id}`)}
               key={id}
-              className="w-80 h-90 text-center rounded-lg shadow-xl shadow-gray-200 transition duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-gray-400"
+              className="w-80 h-90 text-center rounded-lg shadow-xl shadow-gray-200 transition duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-gray-400 cursor-pointer"
             >
               <div className="w-full h-48 rounded-lg">
                 <img
