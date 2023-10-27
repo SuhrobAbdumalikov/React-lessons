@@ -2,8 +2,9 @@ import PropTypes from "prop-types";
 import { instance } from "../utils/useRequest";
 import { useEffect, useState } from "react";
 import Card from "./card";
+import { toast } from "./ui/use-toast";
 
-function NewArrivals({ wishList, setWishList }) {
+function NewArrivals({ wishList, setWishList, isLogged }) {
   const [arrivals, setArrivals] = useState([]);
 
   useEffect(() => {
@@ -15,23 +16,31 @@ function NewArrivals({ wishList, setWishList }) {
   }, []);
 
   const handleLikeBtnClick = async (id) => {
-    const el = wishList.find((wishItem) => wishItem._id === id);
-
-    if (!el) {
-      const product = arrivals.find((arr) => arr._id === id);
-      setWishList((prev) => [...prev, product]);
-      await instance.patch("/wishlist", {
-        productdetails: product,
+    if (!isLogged) {
+      toast({
+        variant: "destructive",
+        title: "You are not registering yet!",
+        description: "Please registering!",
       });
     } else {
-      setWishList((prev) => prev.filter((wishItem) => wishItem._id !== id));
-      await instance.delete("/wishlist/" + id);
+      const el = wishList.find((wishItem) => wishItem._id === id);
+
+      if (!el) {
+        const product = arrivals.find((arr) => arr._id === id);
+        setWishList((prev) => [...prev, product]);
+        await instance.patch("/wishlist", {
+          productdetails: product,
+        });
+      } else {
+        setWishList((prev) => prev.filter((wishItem) => wishItem._id !== id));
+        await instance.delete("/wishlist/" + id);
+      }
     }
   };
 
   return (
     <div className="container">
-      <h1 className="text-center mb-8 text-3xl text-white">New Arrivals</h1>
+      <h1 className="text-center mb-8 text-3xl text-gray-500">New Arrivals</h1>
       <div className="flex justify-between">
         {arrivals?.map((arrival) => (
           <Card
@@ -54,4 +63,5 @@ export default NewArrivals;
 NewArrivals.propTypes = {
   wishList: PropTypes.array,
   setWishList: PropTypes.func,
+  isLogged: PropTypes.any,
 };

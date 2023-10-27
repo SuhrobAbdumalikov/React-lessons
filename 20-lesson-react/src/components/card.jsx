@@ -24,7 +24,7 @@ function Card({
   };
   return (
     <div
-      className="w-[250px]  border border-gray-500 cursor-pointer p-1 bg-black shadow-md text-white shadow-white text-center relative"
+      className="w-[250px] h-[370px] border border-blue-400 cursor-pointer p-1 bg-white shadow-lg text-black shadow-gray-400 text-center relative"
       onClick={() => navigate("/product/" + _id)}
     >
       <span
@@ -72,7 +72,7 @@ function Card({
         className="w-[150px] mx-auto mt-2 h-[200px] object-contain"
       />
       <h3>{bookName}</h3>
-      <span className="my-4 inline-block">by {author}</span>
+      <span className="my-4 inline-block italic">by {author}</span>
       <div className="flex justify-between items-center">
         <p>R.S {discountedPrice}</p>
         <del>R.S {originalPrice}</del>

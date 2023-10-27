@@ -2,7 +2,13 @@ import PropTypes from "prop-types";
 import Genres from "../components/genres";
 import NewArrivals from "../components/new-arrivals";
 
-function Home({ selectedGenres, setSelectedGenres, wishList, setWishList }) {
+function Home({
+  selectedGenres,
+  setSelectedGenres,
+  wishList,
+  setWishList,
+  isLogged,
+}) {
   return (
     <div className="mt-3 mb-10">
       <div className="mb-10 rounded-sm">
@@ -12,12 +18,16 @@ function Home({ selectedGenres, setSelectedGenres, wishList, setWishList }) {
           className="rounded-sm w-full"
         />
       </div>
-      <h1 className="text-center mb-8 text-3xl text-white">Genres</h1>
+      <h1 className="text-center mb-8 text-3xl text-gray-500">Genres</h1>
       <Genres
         selectedGenres={selectedGenres}
         setSelectedGenres={setSelectedGenres}
       />
-      <NewArrivals setWishList={setWishList} wishList={wishList} />
+      <NewArrivals
+        isLogged={isLogged}
+        setWishList={setWishList}
+        wishList={wishList}
+      />
     </div>
   );
 }
@@ -29,4 +39,5 @@ Home.propTypes = {
   wishList: PropTypes.array,
   setWishList: PropTypes.func,
   handleLikeBtnClick: PropTypes.func,
+  isLogged: PropTypes.any,
 };

@@ -5,7 +5,13 @@ import { badgeVariants } from "../components/ui/badge";
 import { Button } from "../components/ui/button";
 import { toast } from "../components/ui/use-toast";
 
-function SingleProduct({ products, handleLikeBtnClick, handleAddCardBtn }) {
+function SingleProduct({
+  products,
+  handleLikeBtnClick,
+  handleAddCardBtn,
+  isLogged,
+  wishList,
+}) {
   const [product, setProduct] = useState({});
   const { productID } = useParams();
   const {
@@ -35,20 +41,23 @@ function SingleProduct({ products, handleLikeBtnClick, handleAddCardBtn }) {
     handleLikeBtnClick(_id);
   };
 
+  const isLiked =
+    wishList?.findIndex((wishItem) => wishItem._id === productID) === -1;
+
   const handleAddCart = () => {
     handleAddCardBtn(_id);
     console.log("id", _id);
   };
 
   return (
-    <div className="container text-white">
+    <div className="container text-black">
       {products.length ? (
         <section className="py-[120px] flex justify-evenly items-center">
           <div className="w-[300px] relative">
             <img
               src={imgSrc}
               alt={imgAlt}
-              className="w-[300px] h-[450px] mx-auto shadow-lg shadow-white"
+              className="w-[300px] h-[450px] mx-auto shadow-lg shadow-gray-400"
             />
             <span
               className={`${badgeVariants({
@@ -62,7 +71,7 @@ function SingleProduct({ products, handleLikeBtnClick, handleAddCardBtn }) {
             <h2 className="font-bold text-[36px]">{bookName}</h2>
             <hr className="border" />
             <h3 className="text-[22px]">
-              <span className="mr-5 my-4 font-bold inline-block">Author:</span>{" "}
+              <span className="mr-5 my-4 font-bold inline-block">Author:</span>
               {author}
             </h3>
             <p className="text-[20px]">
@@ -84,30 +93,48 @@ function SingleProduct({ products, handleLikeBtnClick, handleAddCardBtn }) {
             </div>
             <div className="flex justify-between items-center gap-3 mt-5 w-[550px]">
               <Button
-                className="bg-red-500 w-1/2 hover:bg-red-700"
+                className="bg-red-500 w-1/2 hover:bg-red-700 shadow-lg shadow-gray-400"
                 onClick={() => {
                   handleAddToWishlist();
-                  toast({
-                    className: "bg-green-600 text-white",
-                    title: "Successfully Added✅",
-                    description: "Item successfully added to Wishlist!",
-                  });
+                  !isLogged
+                    ? toast({
+                        variant: "destructive",
+                        title: "You are not registering yet!",
+                        description: "Please registering!",
+                      })
+                    : isLiked
+                    ? toast({
+                        className: "bg-green-600 text-white",
+                        title: "Successfully Added✅",
+                        description: "Item successfully added to Wishlist!",
+                      })
+                    : toast({
+                        className: "bg-green-600 text-white",
+                        title: "Successfully Removed✅",
+                        description: "Item successfully removed from Wishlist!",
+                      });
                 }}
               >
-                Add to Wishlist
+                {isLiked ? "Add Wishlist" : "Remove Wishlist"}
               </Button>
               <Button
-                className="bg-orange-400 w-1/2 hover:bg-orange-500 "
+                className="bg-orange-400 w-1/2 hover:bg-orange-500 shadow-lg shadow-gray-400"
                 onClick={() => {
                   handleAddCart();
-                  toast({
-                    className: "bg-green-600 text-white",
-                    title: "Successfully Added✅",
-                    description: "Item successfully added to Cards!",
-                  });
+                  !isLogged
+                    ? toast({
+                        variant: "destructive",
+                        title: "You are not registering yet!",
+                        description: "Please registering!",
+                      })
+                    : toast({
+                        className: "bg-green-600 text-white",
+                        title: "Successfully Added✅",
+                        description: "Item successfully added to Cards!",
+                      });
                 }}
               >
-                Add to Card
+                Add Card
               </Button>
             </div>
           </div>
@@ -123,10 +150,13 @@ function SingleProduct({ products, handleLikeBtnClick, handleAddCardBtn }) {
 
 SingleProduct.propTypes = {
   products: PropTypes.array,
-  wishlist: PropTypes.array,
+  wishList: PropTypes.array,
   setWishlist: PropTypes.func,
   handleLikeBtnClick: PropTypes.func,
   handleAddCardBtn: PropTypes.func,
+  isLiked: PropTypes.any,
+  isCardAdd: PropTypes.any,
+  isLogged: PropTypes.any,
 };
 
 export default SingleProduct;

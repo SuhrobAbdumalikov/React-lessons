@@ -14,7 +14,7 @@ function Genres({ setSelectedGenres }) {
         <div
           onClick={() => handleClick([genre])}
           key={genre.title}
-          className="bg-green-600 w-[120px] h-[100px] flex justify-center items-center text-lg cursor-pointer text-white rounded-sm"
+          className="bg-blue-600 w-[120px] h-[100px] flex justify-center items-center text-lg cursor-pointer text-white rounded-sm shadow-lg shadow-gray-400"
         >
           {genre.title}
         </div>

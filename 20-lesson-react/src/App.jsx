@@ -9,6 +9,11 @@ import Shop from "./pages/shop.jsx";
 import WishList from "./pages/wishlist.jsx";
 import Login from "./pages/login.jsx";
 import MainCard from "./pages/mainCard.jsx";
+import NotFound from "./pages/notFound.jsx";
+import ProtectRouter from "./utils/ProtectRouter.jsx";
+import Cards from "./pages/cards.jsx";
+import { toast } from "./components/ui/use-toast.js";
+import SignUp from "./pages/signUp.jsx";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -21,16 +26,56 @@ function App() {
 
   const getData = async () => {
     const data = await instance.get("/user");
-    if (data.data?.user) {
-      setWishList(data.data?.user?.wishlist);
-    }
-    console.log(data.data?.user);
+    setWishList(data.data?.user?.wishlist);
   };
 
   const getCardData = async () => {
     const data = await instance.get("/user");
-    if (data.data?.cart) {
-      setCardItem(data.data?.user?.cart);
+    setCardItem(data.data?.user?.cart);
+  };
+
+  const handleLikeBtnClick = async (id) => {
+    if (!isLogged) {
+      toast({
+        variant: "destructive",
+        title: "You are not registering yet!",
+        description: "Please registering!",
+      });
+    } else {
+      const el = wishList.find((wishItem) => wishItem._id === id);
+
+      if (!el) {
+        const product = products.find((arr) => arr._id === id);
+        setWishList((prev) => [...prev, product]);
+        await instance.patch("/wishlist", {
+          productdetails: product,
+        });
+      } else {
+        setWishList((prev) => prev.filter((wishItem) => wishItem._id !== id));
+        await instance.delete("/wishlist/" + id);
+      }
+    }
+  };
+
+  const handleAddCardBtn = async (id) => {
+    if (!isLogged) {
+      toast({
+        variant: "destructive",
+        title: "You are not registering yet!",
+        description: "Please registering!",
+      });
+    } else {
+      const el = cardItem.find((cards) => cards._id === id);
+
+      if (!el) {
+        const product = products.find((arr) => arr._id === id);
+        setCardItem((prev) => [...prev, product]);
+        await instance.patch("/cart", {
+          productdetails: product,
+        });
+      } else {
+        return;
+      }
     }
   };
 
@@ -39,46 +84,20 @@ function App() {
     (async () => {
       const data = await instance.get("/home/products");
       setProducts(data.data?.productsList);
-      console.log(data.data);
     })();
     getData();
     getCardData();
   }, []);
 
-  const handleLikeBtnClick = async (id) => {
-    const el = wishList.find((wishItem) => wishItem._id === id);
-
-    if (!el) {
-      const product = products.find((arr) => arr._id === id);
-      setWishList((prev) => [...prev, product]);
-      await instance.patch("/wishlist", {
-        productdetails: product,
-      });
-    } else {
-      setWishList((prev) => prev.filter((wishItem) => wishItem._id !== id));
-      await instance.delete("/wishlist/" + id);
-    }
-  };
-
-  const handleAddCardBtn = async (id) => {
-    const el = cardItem.find((cards) => cards._id === id);
-
-    if (!el) {
-      const product = products.find((arr) => arr._id === id);
-      setCardItem((prev) => [...prev, product]);
-      await instance.patch("/cart", {
-        productdetails: product,
-      });
-    } else {
-      setCardItem((prev) => prev.filter((cards) => cards._id !== id));
-      await instance.delete("/cart/" + id);
-    }
-  };
-
   return (
     <BrowserRouter>
       <Layout>
-        <Header isLogged={isLogged} setIsLogged={setIsLogged} />
+        <Header
+          cardItem={cardItem}
+          wishList={wishList}
+          isLogged={isLogged}
+          setIsLogged={setIsLogged}
+        />
         <Routes>
           <Route
             path="/"
@@ -88,6 +107,7 @@ function App() {
                 setSelectedGenres={setSelectedGenres}
                 wishList={wishList}
                 setWishList={setWishList}
+                isLogged={isLogged}
               />
             }
           />
@@ -100,7 +120,6 @@ function App() {
                 selectedGenres={selectedGenres}
                 setSelectedGenres={setSelectedGenres}
                 wishList={wishList}
-                setWishList={setWishList}
               />
             }
           />
@@ -111,20 +130,22 @@ function App() {
                 products={products}
                 handleLikeBtnClick={handleLikeBtnClick}
                 handleAddCardBtn={handleAddCardBtn}
+                isLogged={isLogged}
+                wishList={wishList}
               />
             }
           />
-          <Route path="/wishlist" element={<WishList />} />
-          <Route
-            path="/cards"
-            element={
-              <MainCard
-                handleAddCardBtn={handleAddCardBtn}
-                handleLikeBtnClick={handleLikeBtnClick}
-              />
-            }
-          />
+          <Route path="/cards" element={<MainCard />} />
+          <Route path="/signUp" element={<SignUp />} />
           <Route path="/login" element={<Login setIsLogged={setIsLogged} />} />
+          <Route path="*" element={<NotFound />} />
+          <Route element={<ProtectRouter isLogged={isLogged} />}>
+            <Route
+              element={<WishList handleLikeBtnClick={handleLikeBtnClick} />}
+              path="/wishlist"
+            />
+            <Route element={<Cards />} path="/cart" />
+          </Route>
         </Routes>
       </Layout>
     </BrowserRouter>

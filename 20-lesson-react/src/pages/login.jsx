@@ -49,12 +49,14 @@ function Login({ setIsLogged }) {
   return (
     <div className="flex items-center justify-center w-full h-screen">
       <div className="flex gap-8 flex-col w-1/2 mx-auto bg-green-500 p-10 rounded-md">
+        <h1 className="text-center text-2xl font-medium text-white">Login</h1>
         <Input
           name="userEmail"
           placeholder={"Email"}
           type="email"
           value={formData.userEmail}
           onChange={handleChange}
+          className="shadow-md shadow-gray-400"
         />
         <Input
           name="userPassword"
@@ -66,7 +68,7 @@ function Login({ setIsLogged }) {
         <Button onClick={onLogin} disabled={isLoading}>
           Login
         </Button>
-        <Link to={"/sign-up"} className="text-center text-white">
+        <Link to={"/signUp"} className="text-center text-white">
           Sign up
         </Link>
       </div>

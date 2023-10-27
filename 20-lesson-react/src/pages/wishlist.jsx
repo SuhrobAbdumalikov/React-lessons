@@ -3,7 +3,7 @@ import Card from "../components/card";
 import { useEffect, useState } from "react";
 import { instance } from "../utils/useRequest";
 
-function WishList() {
+function WishList({ handleLikeBtnClick }) {
   const [data, setData] = useState([]);
 
   const getData = async () => {
@@ -12,8 +12,8 @@ function WishList() {
   };
 
   const click = async (id) => {
-    await instance.delete("/wishlist/" + id);
-    getData();
+    await handleLikeBtnClick(id);
+    await getData();
   };
 
   useEffect(() => {
@@ -22,8 +22,8 @@ function WishList() {
 
   return (
     <div className="container mt-28">
-      <h1 className="text-center my-5 text-3xl text-white">
-        {data.length} items in Wishlist!
+      <h1 className="text-center my-5 text-3xl text-black">
+        {data?.length} items in Wishlist!
       </h1>
       <div className="flex  mt-5 flex-wrap gap-10">
         {data?.length ? (
@@ -32,7 +32,7 @@ function WishList() {
           ))
         ) : (
           <h1 className="flex items-center justify-center text-4xl w-full mt-32 text-red-500">
-           Your Wishlist is Empty!
+            Your Wishlist is Empty!
           </h1>
         )}
       </div>
@@ -42,6 +42,6 @@ function WishList() {
 export default WishList;
 
 WishList.propTypes = {
-  wishList: PropTypes.array,
-  setWishList: PropTypes.func,
+  // wishList: PropTypes.array,
+  handleLikeBtnClick: PropTypes.func,
 };
