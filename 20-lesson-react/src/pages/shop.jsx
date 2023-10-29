@@ -6,6 +6,7 @@ import { Label } from "../components/ui/label";
 import { Checkbox } from "../components/ui/checkbox";
 import { genres } from "../constants/genre";
 import { Button } from "../components/ui/button";
+import LoadingGlass from "../components/loading";
 
 function Shop({
   products,
@@ -247,14 +248,16 @@ function Shop({
                 {...product}
                 handleLikeBtnClick={handleLikeBtnClick}
                 isLiked={
-                  wishList.findIndex(
+                  wishList?.findIndex(
                     (wishItem) => wishItem._id === product._id
                   ) === -1
                 }
               />
             ))
           ) : (
-            <h1>Not found</h1>
+            <div className="my-28">
+              <LoadingGlass />
+            </div>
           )}
         </div>
       </div>

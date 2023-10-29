@@ -56,7 +56,7 @@ function Login({ setIsLogged }) {
           type="email"
           value={formData.userEmail}
           onChange={handleChange}
-          className="shadow-md shadow-gray-400"
+          className="shadow-md shadow-gray-600"
         />
         <Input
           name="userPassword"
@@ -64,8 +64,13 @@ function Login({ setIsLogged }) {
           type="password"
           value={formData.userPassword}
           onChange={handleChange}
+          className="shadow-md shadow-gray-600"
         />
-        <Button onClick={onLogin} disabled={isLoading}>
+        <Button
+          onClick={onLogin}
+          disabled={isLoading}
+          className="shadow-md shadow-gray-500"
+        >
           Login
         </Button>
         <Link to={"/signUp"} className="text-center text-white">

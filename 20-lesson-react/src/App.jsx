@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { toast } from "./components/ui/use-toast.js";
 import { useEffect, useState } from "react";
 import { instance } from "./utils/useRequest.js";
 import Home from "./pages/home.jsx";
@@ -12,8 +13,8 @@ import MainCard from "./pages/mainCard.jsx";
 import NotFound from "./pages/notFound.jsx";
 import ProtectRouter from "./utils/ProtectRouter.jsx";
 import Cards from "./pages/cards.jsx";
-import { toast } from "./components/ui/use-toast.js";
 import SignUp from "./pages/signUp.jsx";
+import Order from "./pages/order.jsx";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -26,12 +27,16 @@ function App() {
 
   const getData = async () => {
     const data = await instance.get("/user");
-    setWishList(data.data?.user?.wishlist);
+    if (data.data?.user) {
+      setWishList(data.data?.user?.wishlist);
+    }
   };
 
   const getCardData = async () => {
     const data = await instance.get("/user");
-    setCardItem(data.data?.user?.cart);
+    if (data.data?.user) {
+      setCardItem(data.data?.user?.cart);
+    }
   };
 
   const handleLikeBtnClick = async (id) => {
@@ -85,8 +90,8 @@ function App() {
       const data = await instance.get("/home/products");
       setProducts(data.data?.productsList);
     })();
-    getData();
     getCardData();
+    getData();
   }, []);
 
   return (
@@ -135,8 +140,10 @@ function App() {
               />
             }
           />
-          <Route path="/cards" element={<MainCard />} />
-          <Route path="/signUp" element={<SignUp />} />
+          <Route
+            path="/signUp"
+            element={<SignUp setIsLogged={setIsLogged} />}
+          />
           <Route path="/login" element={<Login setIsLogged={setIsLogged} />} />
           <Route path="*" element={<NotFound />} />
           <Route element={<ProtectRouter isLogged={isLogged} />}>
@@ -144,7 +151,9 @@ function App() {
               element={<WishList handleLikeBtnClick={handleLikeBtnClick} />}
               path="/wishlist"
             />
+            <Route path="/cards" element={<MainCard />} />
             <Route element={<Cards />} path="/cart" />
+            <Route path="/order" element={<Order />} />
           </Route>
         </Routes>
       </Layout>

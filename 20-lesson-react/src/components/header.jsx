@@ -36,9 +36,9 @@ function Header({ isLogged, setIsLogged, wishList, cardItem }) {
               className="rounded-full bg-blue-600 hover:bg-blue-800 w-10 relative flex items-center justify-center text-white transition-all"
             >
               <FontAwesomeIcon icon={faHeart} />
-              {wishList.length ? (
+              {wishList?.length ? (
                 <span className="absolute right-[-5px] top-[-10px] bg-red-500 w-6 p-1 text-xs flex items-center justify-center rounded-full">
-                  {wishList.length}
+                  {wishList?.length}
                 </span>
               ) : null}
             </Link>
@@ -54,7 +54,7 @@ function Header({ isLogged, setIsLogged, wishList, cardItem }) {
               ) : null}
             </Link>
             <Link
-              to={"/orderList"}
+              to={"/order"}
               className="rounded-full bg-blue-600 hover:bg-blue-800 w-10 flex items-center justify-center text-white transition-all"
             >
               <FontAwesomeIcon icon={faShoppingBag} />
