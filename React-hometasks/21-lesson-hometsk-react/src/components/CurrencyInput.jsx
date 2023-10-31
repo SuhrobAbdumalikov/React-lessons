@@ -12,7 +12,7 @@ const CurrencyInput = ({
       <input
         type="number"
         className="bg-transparent text-[#c9d4dc] border rounded-lg focus:border-gray-400 border-gray-700 p-2 text-lg"
-        placeholder="null"
+        placeholder="0"
         value={amount}
         onChange={(e) => handleAmountChange(e.target.value)}
       />
